@@ -1,3 +1,7 @@
+import { Dispatch } from "react"
+
+type Context = {state:State, dispatch: Dispatch<Action>}
+
 interface State {
 	todos:Todo[],
 	tags:Tag[]
@@ -50,6 +54,6 @@ interface FetchTodos {
 }
 
 interface FetchTags {
-	type: 'FETCHTTAGS',
+	type: 'FETCHTAGS',
 	payload: any
 }

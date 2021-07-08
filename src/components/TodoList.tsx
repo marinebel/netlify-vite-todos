@@ -6,7 +6,7 @@ import TodoItem from './TodoItem';
 const TodoList = () => {
 	const {state, dispatch} = useContext(storeContext)
 	useEffect(() => {
-		dispatch({type:'FETCHTODOS'})
+		dispatch({type:'FETCHTODOS', payload:{}})
 	}, [])
 	return (
 		<div className="flex flex-col">

@@ -1,5 +1,6 @@
 import React, { FC, MouseEvent, useContext } from 'react';
 import { storeContext } from '../Store';
+import { Todo } from '../types/index'
 
 const TodoItem:FC<{todo:Todo}> = ({todo}) => {
 

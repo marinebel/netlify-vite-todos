@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FC, MouseEvent, useContext, useEffect, useState } from 'react';
 import { storeContext } from '../Store';
+import { Tag } from '../types/index';
 
 const TodoForm:FC = () => {
 	const {state, dispatch} = useContext(storeContext)
@@ -23,7 +24,7 @@ const TodoForm:FC = () => {
 	}
 
 	useEffect(() => {
-		dispatch({type:'FETCHTAGS'})
+		dispatch({type:'FETCHTAGS', payload:{}})
 		return () => {}
 	}, [])
 	return (

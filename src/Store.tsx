@@ -1,11 +1,13 @@
 import React, { createContext, PropsWithChildren } from "react";
 import { useReducerAsync } from "use-reducer-async";
+import {Action, Context, State} from './types/index'
 
-const initialStoreContext = {
+const initialStoreContext:Context = {
 	state: {
 		todos: [],
 		tags: []
-	}
+	},
+	dispatch: (_a:any) => {}
 }
 //REDUCER
 const reducer = (state:State, action:Action) => {
@@ -117,7 +119,7 @@ const storeContext = createContext(initialStoreContext);
 const { Provider } = storeContext;
 const StateProvider = ({children}:PropsWithChildren<any>) =>  {
 	const [state, dispatch] = useReducerAsync(reducer, initialStoreContext.state,asyncActionHandler)
-	return <Provider value={{state, dispatch}}>{children}</Provider>
+	return <Provider value={{state , dispatch}}>{children}</Provider>
 }
 
 export { storeContext, StateProvider }
